@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Elian Palma</title>
+    <meta name="theme-color" content="#05070d">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="%PUBLIC_URL%/custom.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Misma extensión de tema que tailwind.config.js, para que el script CDN y el CSS compilado generen lo mismo
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Sora', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace']
+            },
+            colors: {
+              ink: { 950: '#05070d', 900: '#090c15', 800: '#0e1220', 700: '#151a2c', 600: '#1e2438' }
+            }
+            ,
+            keyframes: {
+              'fade-up': { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+              'float-slow': { '0%, 100%': { transform: 'translate3d(0,0,0) scale(1)' }, '50%': { transform: 'translate3d(3%,-4%,0) scale(1.08)' } },
+              'slide-progress': { '0%': { transform: 'scaleX(0)' }, '100%': { transform: 'scaleX(1)' } },
+              'caret': { '0%, 49%': { opacity: '1' }, '50%, 100%': { opacity: '0' } }
+            },
+            animation: {
+              'fade-up': 'fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both',
+              'float-slow': 'float-slow 14s ease-in-out infinite',
+              'slide-progress': 'slide-progress 5s linear forwards',
+              'caret': 'caret 1s steps(1) infinite'
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WBXL1XS4MK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WBXL1XS4MK');
+</script>
+    
+  </head>
+  <body>
+    <div id="root"></div>
+    <button id="botonArriba" title="Volver arriba">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" d="M11.47 3.72a.75.75 0 011.06 0l5.25 5.25a.75.75 0 11-1.06 1.06L12 5.31l-4.72 4.72a.75.75 0 11-1.06-1.06l5.25-5.25zM12 7a.75.75 0 01.75.75v10.5a.75.75 0 01-1.5 0V7.75A.75.75 0 0112 7z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <div class="whatsapp-bubble">
+        <a href="https://api.whatsapp.com/send?phone=5804128231012" target="_blank" rel="noopener noreferrer">
+            
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+        </a>
+    </div>
+  </body>
+</html>
+
+<style>
+
+          .whatsapp-bubble {
+              position: fixed;
+              left: 20px; /* Ajusta la distancia desde el borde izquierdo */
+              bottom: 100px; /* Ajusta la distancia desde el borde inferior */
+              background-color: #387df485; /* Color verde de WhatsApp */
+              color: white;
+              border-radius: 50%;
+              width: 60px;
+              height: 60px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 24px;
+              cursor: pointer;
+              box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+              z-index: 1000; /* Asegura que esté por encima de otros elementos */
+          }
+
+          .whatsapp-bubble:hover {
+              opacity: 0.8;
+          }
+
+          .whatsapp-bubble a {
+              color: white;
+              text-decoration: none;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+          }
+
+          /* Opcional: Icono de WhatsApp (puedes usar un emoji o una fuente de iconos) */
+          .whatsapp-icon {
+              font-size: 30px;
+          } 
+
+#botonArriba {
+  display: none; /* Oculto inicialmente */
+  position: fixed; /* Fijo en la pantalla */
+  bottom: 100px; /* Distancia desde la parte inferior */
+  right: 20px; /* Distancia desde la derecha */
+  z-index: 99; /* Asegura que esté por encima de otros elementos */
+  border: none;
+  outline: none;
+  background-color: #1f2125; /* Color de fondo */
+  color: white; /* Color del texto/icono */
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  opacity: 0.7; /* Transparencia inicial */
+  transition: opacity 0.3s ease-in-out; /* Transición suave para la opacidad */
+}
+
+#botonArriba:hover {
+  opacity: 1; /* Más visible al pasar el ratón */
+}
+
+#botonArriba svg {
+  width: 20px;
+  height: 20px;
+}
+
+</style>
+
+
+<script>
+
+// Obtener el botón por su ID
+let miBoton = document.getElementById("botonArriba");
+
+// Mostrar el botón cuando el usuario scrollea hacia abajo 20px desde la parte superior del documento
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    miBoton.style.display = "block";
+  } else {
+    miBoton.style.display = "none";
+  }
+}
+
+// Hacer que el botón regrese al inicio con un desplazamiento suave cuando se hace clic
+miBoton.addEventListener("click", function() {
+  // Para navegadores modernos con desplazamiento suave
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+</script>
