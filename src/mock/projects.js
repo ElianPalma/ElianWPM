@@ -52,8 +52,17 @@ import p49 from '../components/img/vizzio.png';
 // import p52 from '../components/img/calzados.png';
 // import p53 from '../components/img/corona.png';
 // import p54 from '../components/img/abogados.png';
+import p55 from '../components/img/vane.png';
 
 const projects = [
+  {
+    id: 55,
+    title: "Alder Vane",
+    image: p55,
+    description: "Tienda online de moda en Shopify con tema personalizado en Liquid: buscador inteligente, guías de tallas y SEO trabajado.",
+    tags: ["Shopify", "Liquid", "Buscador inteligente", "Guía de tallas", "E-commerce", "SEO", "Responsive"],
+    demoUrl: "https://alder-vane.com/",
+  },
   /* PROYECTOS OCULTOS TEMPORALMENTE (webs de Kit Digital). Para mostrarlos: quitar este comentario y descomentar los imports p50-p54 de arriba.
   {
     id: 50,
